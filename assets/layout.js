@@ -19,7 +19,7 @@
     : CFG.id ? "https://" + CFG.id + ".github.io/" : null;
   var HOME_LABEL = "홈";
   // 버전 (큰 변화 . 중요한 변화 . 사소한 변화). 작업할 때마다 올리고 CHANGELOG.md 에도 적는다.
-  var SITE_VERSION = "0.4.0";
+  var SITE_VERSION = "0.4.1";
   // ─────────────────────────
 
   var script = document.currentScript;

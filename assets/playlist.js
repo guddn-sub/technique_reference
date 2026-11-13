@@ -9,6 +9,7 @@
 //  - 진행 막대를 누르면 그 위치로 이동.
 //  - 이 페이지는 페이지 전체(헤더·제목·재생기)를 화면의 80%(최대 1400px)로 넓혀서 크게 본다.
 //  - 키보드: ← → 이전/다음 · 스페이스 일시정지 · F 전체화면 · A 자동 넘김
+//  - 인터넷이 느리면 영상 가운데에 "불러오는 중…"을 띄운다. (media.js 의 MLAttachLoading)
 (function () {
   "use strict";
 
@@ -84,6 +85,8 @@
       '<span class="sp"></span><span class="hint">← → 이동 · 스페이스 일시정지 · F 전체화면 · A 자동 넘김</span>' +
       '</div></div><div class="pl-list"></div></div>';
     var stage = slot.querySelector(".pl-stage");
+    // 버퍼링 중 "불러오는 중…" 표시 (media.js 의 공통 함수. 없으면 표시 없이 동작)
+    if (window.MLAttachLoading) window.MLAttachLoading(slot.querySelector(".pl-screen"), slot.querySelector("video"));
     var v = slot.querySelector("video");
     var barBox = slot.querySelector(".pl-bar");
     var bar = barBox.querySelector("i");
